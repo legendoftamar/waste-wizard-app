@@ -6,7 +6,6 @@ const App = () => (
   <div>
     <h1>app</h1>
     <Userlist></Userlist>
-    <FavUser></FavUser>
   </div>
 )
 

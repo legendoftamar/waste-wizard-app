@@ -1,11 +1,10 @@
 import { combineReducers } from 'redux';
-import UserReducer from './reducer-users';
+import reducer from './reducer-waste';
 import UserFavorites from './reducer-favorites';
 
 //combine all data into one object
 const allReducers = combineReducers({
-    users: UserReducer,
-    favoriteUser: UserFavorites
+    waste: reducer
 });
 
 export default allReducers;

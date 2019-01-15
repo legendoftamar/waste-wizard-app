@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import allReducers from './reducers';
 import App from './components/app';
 
+var thunk = require('redux-thunk').default
+
 //all of the data for the entire application
-const store = createStore(allReducers);
+const store = createStore(allReducers, applyMiddleware(thunk));
 
 ReactDOM.render(
     //every component has access to store
