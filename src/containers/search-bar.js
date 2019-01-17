@@ -6,8 +6,15 @@ import { Icon, Button } from '@shopify/polaris';
     
   class SearchBar extends Component {
 
-    searchInput() {
+    handleSubmit(event) {
       this.props.search(this.refs.input.value);
+      event.preventDefault();
+    }
+
+    handleChange(event) {
+      if(!this.refs.input.value){
+        this.props.search("&&&");
+      }
     }
     
     //display data
@@ -18,8 +25,8 @@ import { Icon, Button } from '@shopify/polaris';
             <div class = "search-bar">
 
       <form>
-          <input class = "search-input" type="text" name="search" placeholder = "Search..." ref = "input"/>
-          <button type = "button" onClick={this.searchInput.bind(this)}> <Icon color="white" source="search"/> </button>
+          <input class = "search-input" type="text" name="search" ref = "input" onChange={this.handleChange.bind(this)}/>
+          <button type = "submit" onClick={this.handleSubmit.bind(this)}> <Icon color="white" source="search"/> </button>
       </form>
       
           </div>
@@ -41,5 +48,6 @@ import { Icon, Button } from '@shopify/polaris';
 function matchDispatchToProps(dispatch){
     return bindActionCreators({search: search}, dispatch);
 }
+
 
 export default connect(mapStateToProps, matchDispatchToProps)(SearchBar);
