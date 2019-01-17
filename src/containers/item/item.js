@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { favorite } from '../../actions/index.js'
+import { favorite, unfavorite } from '../../actions/index.js'
 import  Parser from 'html-react-parser';
 import {bindActionCreators} from 'redux';
-import { Icon } from '@shopify/polaris';
 
   class WasteItem extends Component {
 
@@ -23,7 +22,7 @@ import { Icon } from '@shopify/polaris';
 
         return(
 
-          <div class = "favorited"> &#9733; </div>
+          <div class = "favorited" onClick = {() => this.props.unfavorite(this.props.item.title, this.props.item.body)} > &#9733; </div>
 
         ) }
 
@@ -39,8 +38,8 @@ import { Icon } from '@shopify/polaris';
                 return(
         
                   <tr>
-                  <td> {this.renderStar()} </td>
-                  <td> {this.props.item.title} </td>  
+                  <td class = "star"> {this.renderStar()} </td>
+                  <td class = "item-title"> {this.props.item.title} </td>  
                   <td> {Parser(Parser(this.props.item.body))} </td>
                   
                   </tr>
@@ -58,7 +57,7 @@ import { Icon } from '@shopify/polaris';
   }
 
   function matchDispatchToProps(dispatch){
-    return bindActionCreators({favorite: favorite}, dispatch);
+    return bindActionCreators({favorite: favorite, unfavorite: unfavorite}, dispatch);
 }
 
 

@@ -33,3 +33,10 @@ export const fetchWasteError = () =>  {
       payload: {title, body}
     }
   };
+
+  export const unfavorite = (title, body) =>  {
+    return {
+      type: "UNFAVORITE",
+      payload: {title, body}
+    }
+  };

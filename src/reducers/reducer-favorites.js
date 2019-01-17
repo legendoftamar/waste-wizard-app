@@ -2,14 +2,19 @@
 const initialState =  { favorites: [] };
 
 const reducer_favorites = (state = initialState, action) => {
-    console.log(action.payload);
-    console.log(state);
     switch (action.type) {
         case "FAVORITE": {
         return {
             ...state,
             favorites: [...state.favorites, action.payload]
           }; }
+          case "UNFAVORITE": {
+            state.favorites = state.favorites.filter(element => action.payload.title != element.title)
+            return {
+                ...state,
+                favorites: [...state.favorites]
+              }; }
+
       default:
         return state;
     }

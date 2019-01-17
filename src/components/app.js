@@ -13,13 +13,14 @@ const App = () => (
 
     <div class = "content">
 
-    <SearchBar> </SearchBar>
+      <SearchBar> </SearchBar>
 
-    <SearchResult></SearchResult>
+      <SearchResult></SearchResult> </div>
+
+    <div>
 
     <Favorites></Favorites>
-
-
+    
     </div>
    
   </div>

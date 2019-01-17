@@ -1,3 +1,7 @@
+body {
+    background-color: white;
+}
+
 h1 {
     text-align: center;
     background-image: linear-gradient(to right, #1D5997 , #1F9862);
@@ -8,26 +12,50 @@ h1 {
     margin-top: 10px;
 }
 
+.search-bar {
+    text-align: center;
+    width: 100%;
+}
+
+.search-input {
+    width: 95%;
+    padding: 8px;
+    font-size: 17px;
+    margin-right: 10px;
+    vertical-align: middle
+}
+
+button {
+    background-color: #1F9862;
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    vertical-align: middle
+}
+
 .content {
     margin: 2%;
 }
 
-.waste {
-    width: 40%;
+.item-title {
+    width: 30%;
     padding-right: 5%;
 }
 
-.searchBar {
-    width: 70%;
-    padding: 8px;
-    font-size: 14px;
-    margin: 5px;
-    margin-right: 10px;
+.star {
+    width: 2%;
+}
+
+h2 {
+    padding: 10px;
+    font-size: 25px;
+    color: green;
+    font-weight: bold;
 }
 
 .favorites {
-    background-color: lightgreen;
-    margin: 0px;
+    background-color: #F7FDF9;
+    padding: 2%;
 }
 
 .favorited {
@@ -37,4 +65,6 @@ h1 {
 .notFavorited {
     color: grey;
 }
+
+
 

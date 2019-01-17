@@ -9,9 +9,11 @@ import WasteItem from './item/item';
 class Favorites extends Component {
 
     render() {
-        if (this.props.favorites.favorites) {return (
+        if (typeof this.props.favorites.favorites[0] != "undefined") {return (
 
             <div class = "favorites">
+
+            <h2> Favorites </h2>
             
             <table>
             { 

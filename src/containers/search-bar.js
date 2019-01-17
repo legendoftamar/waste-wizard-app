@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { search } from '../actions/index.js';
 import {bindActionCreators} from 'redux';
-import { Button } from '@shopify/polaris';
+import { Icon, Button } from '@shopify/polaris';
     
   class SearchBar extends Component {
 
@@ -15,11 +15,11 @@ import { Button } from '@shopify/polaris';
 
           if(this.props.waste != null && typeof this.props.waste.waste != "undefined") { return (
 
-            <div>
+            <div class = "search-bar">
 
       <form>
-          <input class = "searchBar" type="text" name="search" placeholder = "Search..." ref = "input"/>
-          <Button type="button" onClick={this.searchInput.bind(this)}> Search </Button>
+          <input class = "search-input" type="text" name="search" placeholder = "Search..." ref = "input"/>
+          <button type = "button" onClick={this.searchInput.bind(this)}> <Icon color="white" source="search"/> </button>
       </form>
       
           </div>
