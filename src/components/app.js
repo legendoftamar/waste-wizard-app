@@ -11,7 +11,7 @@ const App = () => (
 
     <h1>Toronto Waste Lookup</h1>
 
-    <div class = "content">
+    <div class="content">
 
       <SearchBar> </SearchBar>
 
@@ -19,10 +19,10 @@ const App = () => (
 
     <div>
 
-    <Favorites></Favorites>
-    
+      <Favorites></Favorites>
+
     </div>
-   
+
   </div>
 
 )

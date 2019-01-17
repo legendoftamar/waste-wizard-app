@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import WasteItem from './item/item';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import WasteItem from "./item/item";
 
 /*
  * We need "if(!this.props.user)" because we set state to null by default
@@ -9,27 +9,28 @@ import WasteItem from './item/item';
 class Favorites extends Component {
 
     render() {
-        if (typeof this.props.favorites.favorites[0] != "undefined") {return (
+        if (typeof this.props.favorites.favorites[0] != "undefined") {
+            return (
 
-            <div class = "favorites">
+                <div class="favorites">
 
-            <h2> Favorites </h2>
-            
-            <table>
-            { 
-                this.props.favorites.favorites.map((favorite) =>{ 
+                    <h2> Favorites </h2>
 
-                return(
+                    <table>
+                        {
+                            this.props.favorites.favorites.map((favorite) => {
 
-                    <WasteItem item={favorite}> </WasteItem>
-        
-                ) 
-              })
-            }
-        </table> 
+                                return (
 
-        </div>
-        );
+                                    <WasteItem item={favorite}> </WasteItem>
+
+                                )
+                            })
+                        }
+                    </table>
+
+                </div>
+            );
 
         }
 
