@@ -1,0 +1,40 @@
+h1 {
+    text-align: center;
+    background-image: linear-gradient(to right, #1D5997 , #1F9862);
+    color: white;
+    padding: 35px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.content {
+    margin: 2%;
+}
+
+.waste {
+    width: 40%;
+    padding-right: 5%;
+}
+
+.searchBar {
+    width: 70%;
+    padding: 8px;
+    font-size: 14px;
+    margin: 5px;
+    margin-right: 10px;
+}
+
+.favorites {
+    background-color: lightgreen;
+    margin: 0px;
+}
+
+.favorited {
+    color: green;
+}
+
+.notFavorited {
+    color: grey;
+}
+

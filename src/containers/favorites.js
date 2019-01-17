@@ -1,0 +1,47 @@
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import WasteItem from './item/item';
+
+/*
+ * We need "if(!this.props.user)" because we set state to null by default
+ * */
+
+class Favorites extends Component {
+
+    render() {
+        if (this.props.favorites.favorites) {return (
+
+            <div class = "favorites">
+            
+            <table>
+            { 
+                this.props.favorites.favorites.map((favorite) =>{ 
+
+                return(
+
+                    <WasteItem item={favorite}> </WasteItem>
+        
+                ) 
+              })
+            }
+        </table> 
+
+        </div>
+        );
+
+        }
+
+        else {
+            return (<div></div>)
+        }
+    }
+}
+
+// "state.activeUser" is set in reducers/index.js
+function mapStateToProps(state) {
+    return {
+        favorites: state.favorites
+    };
+}
+
+export default connect(mapStateToProps)(Favorites);

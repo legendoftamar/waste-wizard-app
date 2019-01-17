@@ -1,3 +1,5 @@
+//sets the value for the reducer based on action
+
 const reducer = (state = null, action) => {
     switch (action.type) {
       case "FETCH_REQUEST":
