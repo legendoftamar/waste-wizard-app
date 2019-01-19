@@ -36,7 +36,7 @@ class Favorites extends Component {
         }
 
         else {
-            return (<div></div>)
+            return (null)
         }
     }
 }
