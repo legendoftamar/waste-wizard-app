@@ -1,4 +1,4 @@
-//sets the value for the reducer based on action
+//search reducer
 
 const reducer_search = (state = null, action) => {
   switch (action.type) {

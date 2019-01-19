@@ -5,10 +5,12 @@ import WasteItem from './item/item';
 
 class SearchResult extends Component {
 
+    //fetch all data before rendering component
     componentDidMount() {
         this.props.fetchWasteWithRedux()
     }
 
+    //filter data based on search 
     search(element, search) {
         if ((element.title).includes(search) || (element.body).includes(search) || (element.keywords).includes(search)) {
 
@@ -35,6 +37,7 @@ class SearchResult extends Component {
 
                             return (
 
+                                //for each item in data based on search results, render a WasteItem
                                 <WasteItem item={waste}> </WasteItem>
 
                             )
@@ -45,6 +48,7 @@ class SearchResult extends Component {
     }
 }
 
+//use states as props
 function mapStateToProps(state) {
     return {
         waste: state.waste,
@@ -53,13 +57,13 @@ function mapStateToProps(state) {
     }
 }
 
-
 //fetch data with Redux
 function fetchWasteWithRedux() {
     return (dispatch) => {
         dispatch(fetchWasteRequest());
         return fetchWaste().then(([response, json]) => {
             if (response.status === 200) {
+                // if success, fetch json
                 dispatch(fetchWasteSuccess(json))
             }
             else {
@@ -76,5 +80,5 @@ function fetchWaste() {
         .then(response => Promise.all([response, response.json()]));
 }
 
-
+//connect component to states and actions
 export default connect(mapStateToProps, { fetchWasteWithRedux })(SearchResult);

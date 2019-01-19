@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 
 class WasteItem extends Component {
 
+    //determines if item is favorited
     isInFavorites(item) {
         var favorited = "false";
         this.props.favorites.favorites.forEach(element => {
@@ -19,6 +20,7 @@ class WasteItem extends Component {
 
     renderStar() {
 
+        // if favorited, return green star
         if ((this.isInFavorites(this.props.item)) == "true") {
 
             return (
@@ -28,6 +30,7 @@ class WasteItem extends Component {
             )
         }
 
+        //if not, return grey star
         return (
             <div class="notFavorited" onClick={() => this.props.favorite(this.props.item.title, this.props.item.body)} > &#9733; </div>
         )
@@ -50,6 +53,7 @@ class WasteItem extends Component {
     }
 }
 
+//use states as props
 function mapStateToProps(state) {
     return {
         waste: state.waste,
@@ -58,8 +62,10 @@ function mapStateToProps(state) {
     }
 }
 
+// use actions as props
 function matchDispatchToProps(dispatch) {
     return bindActionCreators({ favorite: favorite, unfavorite: unfavorite }, dispatch);
 }
 
+//connect component to states and actions
 export default connect(mapStateToProps, matchDispatchToProps)(WasteItem);

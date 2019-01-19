@@ -1,3 +1,5 @@
+//favorites reducer
+
 const initialState = { favorites: [] };
 
 const reducer_favorites = (state = initialState, action) => {

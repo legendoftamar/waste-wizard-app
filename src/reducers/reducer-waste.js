@@ -1,4 +1,4 @@
-//sets the value for the reducer based on action
+//waste reducer
 
 const reducer = (state = null, action) => {
   switch (action.type) {

@@ -40,11 +40,12 @@ class Favorites extends Component {
     }
 }
 
-// "state.activeUser" is set in reducers/index.js
+// use state as props
 function mapStateToProps(state) {
     return {
         favorites: state.favorites
     };
 }
 
+//connect component to states and actions
 export default connect(mapStateToProps)(Favorites);

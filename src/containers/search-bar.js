@@ -6,11 +6,13 @@ import { Icon } from '@shopify/polaris';
 
 class SearchBar extends Component {
 
+  //prevent component from rerendering by default 
   handleSubmit(event) {
     this.props.search(this.refs.input.value);
     event.preventDefault();
   }
 
+  //if search is cleared, then clear results
   handleChange(event) {
     if (!this.refs.input.value) {
       this.props.search("&&&");
@@ -41,15 +43,17 @@ class SearchBar extends Component {
 
 }
 
+//use state as prop
 function mapStateToProps(state) {
   return {
     waste: state.waste
   }
 }
 
+//use actions as props
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({ search: search }, dispatch);
 }
 
-
+//connect component to states and actions
 export default connect(mapStateToProps, matchDispatchToProps)(SearchBar);
