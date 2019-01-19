@@ -38,7 +38,7 @@ class SearchBar extends Component {
       )
     }
 
-    else return (<p> </p>)
+    else return (null)
 
   }
 
