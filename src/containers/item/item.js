@@ -10,7 +10,7 @@ class WasteItem extends Component {
     isInFavorites(item) {
         var favorited = "false";
         this.props.favorites.favorites.forEach(element => {
-            if (element.title == item.title) {
+            if (element.title === item.title) {
                 favorited = "true";
             }
         });
@@ -21,18 +21,18 @@ class WasteItem extends Component {
     renderStar() {
 
         // if favorited, return green star
-        if ((this.isInFavorites(this.props.item)) == "true") {
+        if ((this.isInFavorites(this.props.item)) === "true") {
 
             return (
 
-                <div class="favorited" onClick={() => this.props.unfavorite(this.props.item.title, this.props.item.body)} > &#9733; </div>
+                <div className="favorited" onClick={() => this.props.unfavorite(this.props.item.title, this.props.item.body)} > &#9733; </div>
 
             )
         }
 
         //if not, return grey star
         return (
-            <div class="notFavorited" onClick={() => this.props.favorite(this.props.item.title, this.props.item.body)} > &#9733; </div>
+            <div className="notFavorited" onClick={() => this.props.favorite(this.props.item.title, this.props.item.body)} > &#9733; </div>
         )
 
     }
@@ -43,8 +43,8 @@ class WasteItem extends Component {
         return (
 
             <tr>
-                <td class="star"> {this.renderStar()} </td>
-                <td class="item-title"> {this.props.item.title} </td>
+                <td className="star"> {this.renderStar()} </td>
+                <td className="item-title"> {this.props.item.title} </td>
                 <td> {Parser(Parser(this.props.item.body))} </td>
 
             </tr>

@@ -11,7 +11,7 @@ const reducer_favorites = (state = initialState, action) => {
             };
         }
         case "UNFAVORITE": {
-            state.favorites = state.favorites.filter(element => action.payload.title != element.title)
+            state.favorites = state.favorites.filter(element => action.payload.title !== element.title)
             return {
                 ...state,
                 favorites: [...state.favorites]

@@ -5,7 +5,7 @@ import WasteItem from './item/item';
 
 class SearchResult extends Component {
 
-    //fetch all data before rendering component
+    //fetch all data after rendering component
     componentDidMount() {
         this.props.fetchWasteWithRedux()
     }
@@ -27,24 +27,34 @@ class SearchResult extends Component {
         if (!this.props.search) {
             return (<div> </div>);
         }
+
+        //destructure
+        const { waste } = this.props.waste;
+        const { search } = this.props.search;
         return (
 
             <table>
-                {
-                    this.props.waste.waste.map((waste) => {
+                <tbody>
+                    {
+                        waste.map((wasteItem) => {
 
-                        if (this.search(waste, this.props.search.search))
+                            if (this.search(wasteItem, search))
 
-                            return (
+                                return (
 
-                                //for each item in data based on search results, render a WasteItem
-                                <WasteItem item={waste}> </WasteItem>
+                                    //for each item in data based on search results, render a WasteItem
+                                    <WasteItem key={wasteItem.title} item={wasteItem}> </WasteItem>
 
-                            )
-                    })
-                }
+                                )
+                            else {
+                                return (null);
+                            }
+                        })
+                    }
+                </tbody>
             </table>
         );
+
     }
 }
 

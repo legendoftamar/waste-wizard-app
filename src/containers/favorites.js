@@ -2,31 +2,32 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import WasteItem from "./item/item";
 
-/*
- * We need "if(!this.props.user)" because we set state to null by default
- * */
-
 class Favorites extends Component {
 
     render() {
-        if (typeof this.props.favorites.favorites[0] != "undefined") {
+        //destructure
+        const { favorites } = this.props.favorites;
+
+        if (typeof favorites[0] != "undefined") {
             return (
 
-                <div class="favorites">
+                <div className="favorites">
 
                     <h2> Favorites </h2>
 
                     <table>
-                        {
-                            this.props.favorites.favorites.map((favorite) => {
+                        <tbody>
+                            {
+                                favorites.map((favorite) => {
 
-                                return (
+                                    return (
 
-                                    <WasteItem item={favorite}> </WasteItem>
+                                        <WasteItem key={favorite.title} item={favorite}> </WasteItem>
 
-                                )
-                            })
-                        }
+                                    )
+                                })
+                            }
+                        </tbody>
                     </table>
 
                 </div>

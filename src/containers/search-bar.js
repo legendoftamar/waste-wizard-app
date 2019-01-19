@@ -23,12 +23,13 @@ class SearchBar extends Component {
   render() {
 
     if (this.props.waste != null && typeof this.props.waste.waste != "undefined") {
+      
       return (
 
-        <div class="search-bar">
+        <div className="search-bar">
 
           <form>
-            <input class="search-input" type="text" name="search" ref="input" onChange={this.handleChange.bind(this)} />
+            <input className="search-input" type="text" name="search" ref="input" onChange={this.handleChange.bind(this)} />
             <button type="submit" onClick={this.handleSubmit.bind(this)}> <Icon color="white" source="search" /> </button>
           </form>
 

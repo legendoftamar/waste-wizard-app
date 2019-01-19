@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { AppProvider, Button } from '@shopify/polaris';
+import { AppProvider } from '@shopify/polaris';
 import { createStore, applyMiddleware } from 'redux';
 import allReducers from './reducers';
 import App from './components/app';
